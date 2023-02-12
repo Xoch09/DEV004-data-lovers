@@ -1,5 +1,8 @@
+
+
 export default {
   "pokemon": [{
+    
     "num": "001",
     "name": "bulbasaur",
     "generation": {
@@ -23950,4 +23953,8 @@ export default {
       "candy": "celebi candy"
     }
   }]
+
+
+
+
 };
