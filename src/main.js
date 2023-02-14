@@ -31,5 +31,3 @@ const mostrarPokemon = (datosdelpokemon) => {
   };
   
   mostrarPokemon(ListaPokemon);
-
-
