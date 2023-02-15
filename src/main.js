@@ -32,4 +32,4 @@ const mostrarPokemon = (datosdelpokemon) => {
   
   mostrarPokemon(ListaPokemon);
 
-
+console.log("esto es una prueba")
