@@ -1,4 +1,4 @@
-import datos from '../src/data/pokemon/pokemon.js';  
+import datos from './data/pokemon/pokemon.js';  
 
 const ListaPokemon = datos.pokemon.slice(0,30);  
 
