@@ -95,5 +95,43 @@
   font-size: 15px;
 }
 
+body {
+  background-image: url(./imagenes/fondo-pokemon.png); 
+  justify-content: center;
+  background-repeat: repeat;
+  min-width: 100vw;
+  max-height: 100vh;
+  font-family: 'Assistant', sans-serif;
+}
+
+.portada {
+  display:block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 40% auto;
+  justify-content: center;
+}
+
+.front {
+  background-image: url(imagenes/fondotarjeta.jpg);
+  grid-area: frontAndBack;
+}
+
+.front,
+.back {
+  position: relative;
+  display: grid;
+  width: 230px;
+  height: 300px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.back {
+  background-image: url(imagenes/fondotarjeta.jpg);
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+}
+
 
 
