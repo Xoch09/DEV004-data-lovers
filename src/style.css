@@ -133,5 +133,9 @@ body {
   transform: rotateY(-180deg);
 }
 
-
-
+/*xochitl,filtro*/
+.contenedor{
+ font-family:cursive;
+ color:#9900FD;
+ font-size: large;
+}

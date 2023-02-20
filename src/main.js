@@ -1,6 +1,6 @@
 import datos from './data/pokemon/pokemon.js';  
 
-const ListaPokemon = datos.pokemon.slice(0,30);  
+const ListaPokemon = datos.pokemon.slice(0,183);  
 
 const mostrarPokemon = (datosdelpokemon) => {
     const TarjetaPoke = document.getElementById("pokemones");
@@ -31,3 +31,6 @@ const mostrarPokemon = (datosdelpokemon) => {
   };
   
   mostrarPokemon(ListaPokemon);
+ 
+ 
+  

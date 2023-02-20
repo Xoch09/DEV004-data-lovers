@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Pokemon GO</title>
   <link rel="stylesheet" href="style.css" />
+
 </head>
 
 
@@ -12,7 +13,19 @@
   <div id="home">
     <img class="portada" src="./imagenes/logo-pokemon.png" />
 
- 
+   <!--xóchitl-->
+<div class="contenedor">
+  <input type="radio" name="filtro" value="Todos los PoKemones"id="Todos los PoKemones">
+<label for="Todos los PoKemones">Todos los Pokemones</label>
+  <input type="radio" name="filtro" value="Kanto" id="Kanto">
+  <label for="Kanto">Kanto</label>
+  <input type="radio" name="filtro" value="Johnto" id="Johto">
+  <label for="Johto">Johto</label>
+  <input type="radio" name="filtro" value="Hoenn" id="Hoenn">
+  <label for="Hoenn">Hoenn</label>
+  <input type="radio" name="filtro" value="Kalos" id="Kalos">
+  <label for="Kalos">Kalos</label>
+  </div>
   
   <div id="pokemones">
       
@@ -20,8 +33,11 @@
   </div>
 
 
-
+ 
+ 
+  <script src="data.js" type="module"></script>
       <script src="main.js" type="module"></script>
 </body>
 
 </html>
+ 
