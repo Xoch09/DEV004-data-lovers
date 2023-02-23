@@ -1,9 +1,11 @@
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
+const filtroPorTipo = (data, valor) => {
+  const filtrarPokemonPorTipo = data.filter((pokemon) => pokemon.type.indexOf(valor.toLowerCase()) > -1);
+  return filtrarPokemonPorTipo;
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+//El método filter() crea un nuevo array con todos los elementos
+//que cumplan la condición implementada por la función dada.
+//5 venenos
+
+
+export {filtroPorTipo};

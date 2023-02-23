@@ -1,0 +1,135 @@
+.card-container {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+  
+  /* Caja contenedora card*/
+  
+  .card {
+    display: grid;
+    position: relative;
+    width: 220px;
+    height: 320px;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "frontAndBack";
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+  }
+  
+  .card div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  /*Configuracion Card parte delantera*/
+  
+  .front {
+   
+    grid-area: frontAndBack;
+  }
+  
+  .numberTitle {
+    text-align:center; 
+    margin: auto;
+    padding:10px; 
+    width: 120px;
+    border:none; 
+    border-radius: 20px;
+    font:30px Arial, Helvetica, sans-serif; 
+    font-weight:bold; 
+    color:#1f212b; 
+    background:#ffffff; 
+    opacity: 0.5;
+  }
+  
+  .picture {
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .front,
+  .back {
+    position: relative;
+    display: grid;
+    width: 230px;
+    height: 300px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .infCardAbout{ 
+    text-align: center;
+    font-size: 15px;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  /* Parte trasera card*/
+  
+  .back {
+    background-image: url(images/fondoCarta.jpg);
+    grid-area: frontAndBack;
+    transform: rotateY(-180deg);
+  }
+  
+  .card-container:hover .card {
+    transform: rotateY(180deg);
+  }
+  
+  /*Parrafo de la carta */
+  
+  .card .title {
+    font-family: 'Concert One', cursive;
+    color: #0707079c;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 14px;
+  }
+  
+  .back title:first-child {
+    color:  #070f1d;
+    font-size: 15px;
+  }
+  
+  body {
+    background-image: url(./imagenes/fondo-pokemon.png); 
+    justify-content: center;
+    background-repeat: repeat;
+    min-width: 100vw;
+    max-height: 100vh;
+    font-family: 'Assistant', sans-serif;
+  }
+  
+  .portada {
+    display:block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 40% auto;
+    justify-content: center;
+  }
+  
+  .front {
+    background-image: url(imagenes/fondotarjeta.jpg);
+    grid-area: frontAndBack;
+  }
+  
+  .front,
+  .back {
+    position: relative;
+    display: grid;
+    width: 230px;
+    height: 300px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .back {
+    background-image: url(imagenes/fondotarjeta.jpg);
+    grid-area: frontAndBack;
+    transform: rotateY(-180deg);
+  }
+  
+  
