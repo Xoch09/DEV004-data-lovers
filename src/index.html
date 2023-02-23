@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon GO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section>
+    <div id="paginaCompleta"> 
+         <img class="portada" src="imagenes/logo-pokemon.png" />
+      <nav class="centrar">
+  
+        <select id="tipo" class="btnControles centrar">
+          <option value="all">por Tipo</option>
+          <option value="Water">Agua</option>
+          <option value="Bug">Bicho</option>
+          <option value="Dragon">Dragón</option>
+          <option value="Electric">Eléctrico</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Fire">Fuego</option>
+          <option value="Ice">Hielo</option>
+          <option value="Fighting">Lucha</option>
+          <option value="Normal">Normal</option>
+          <option value="Grass">Planta</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Rock">Roca</option>
+          <option value="Ground">Tierra</option>
+          <option value="Poison">Veneno</option>
+          <option value="Flying">Volador</option>
+        </select>
+  
+     
+          
+  
+     
+  
+      </nav>
+  
+    </div>
+  </section>
+  
+    
+    <div id="pokemones"></div>
+  
+  
+  
+        <script src="main.js" type="module"></script>
+        <script src="data.js" type="module"></script>
   </body>
-</html>
+  
+  </html>
