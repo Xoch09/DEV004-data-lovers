@@ -1,8 +1,7 @@
 const filtroPorTipo = (data, valor) => {
- const filtrarPokemonPorTipo = data.filter((pokemon) => pokemon.type.indexOf(valor.tolowerCase())> -1);
- return FiltrarPokemonPorFiltro;   
-};
-
-export {filtroPorTipo};
-
+    const filtrarPokemonPorTipo = data.filter((pokemon) => pokemon.type.indexOf(valor.toLowerCase()) > -1);
+    return filtrarPokemonPorTipo;
+  };
+export {filtroPorTipo}
+;
    

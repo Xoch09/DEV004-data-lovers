@@ -1,6 +1,7 @@
-import datos from './data/pokemon/pokemon.js';  
+import datos from  './data/pokemon/pokemon.js' ;  
 import {filtroPorTipo} from "./data.js"
-const ListaPokemon = datos.pokemon.slice(0,183);  
+  
+const ListaPokemon = datos.pokemon;  
 
 const mostrarPokemon = (datosdelpokemon) => {
     const TarjetaPoke = document.getElementById("pokemones");
@@ -31,14 +32,16 @@ const mostrarPokemon = (datosdelpokemon) => {
   };
   
   mostrarPokemon(ListaPokemon);
+
+   //Filtrar según tipo
+//innerHTML vacio reemplaza todo el contenido por un contenido a definir
  
- let buscarTipo;
- const containerTipo = document.getElementById("Tipo");
- containerTipo.addEventListener("change",()=>{
-  const verPokemones = document.getElementById("pokemones");
-  verPokemones.innerHTML=" ";
-  buscarTipo = containerTipo.value;
-  mostrarPokemon = containerTipo.value;
-  mostrarPokemon(filtroPorTipo(ListaPokemon));
- });
-  
+let buscarTipo; // creamos variable 
+const containerTipo = document.getElementById("tipo"); // creamos variable y llevamos lo que esta dentro de "tipo" en index.html
+containerTipo.addEventListener("change", () => {    //   le aplicamos una accion a la variable anterior en el evento cambio (change)
+const verPokemones = document.getElementById("pokemones");  // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
+verPokemones.innerHTML = " ";   ///
+buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
+
+mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
+});
