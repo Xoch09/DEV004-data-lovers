@@ -1,5 +1,5 @@
 import datos from  './data/pokemon/pokemon.js' ;  
-import {filtroPorTipo} from "./data.js"
+import {filtroPorTipo,ordenarPokemon} from "./data.js"
   
 const ListaPokemon = datos.pokemon;  
 
@@ -44,4 +44,14 @@ verPokemones.innerHTML = " ";   ///
 buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
 
 mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
+});
+let ordenarPok;
+const containerOrder = document.getElementById("order");
+containerOrder.addEventListener("change", () => {
+  const verPokemones = document.getElementById("pokemones");
+  verPokemones.innerHTML = "";
+  ordenarPok = containerOrder.value;
+
+  ordenarPokemon(ListaPokemon, ordenarPok);
+  mostrarPokemon(ListaPokemon);
 });
