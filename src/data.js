@@ -6,6 +6,15 @@ const filtroPorTipo = (data, valor) => {
 //El método filter() crea un nuevo array con todos los elementos
 //que cumplan la condición implementada por la función dada.
 //5 venenos
+const ordenarPokemon = (data, valor) => {
+  if (valor === "A-Z") {
+    data.sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    data.sort((a, b) => b.name.localeCompare(a.name));
+  }
+};
 
 
-export {filtroPorTipo};
+
+
+export {filtroPorTipo, ordenarPokemon};
