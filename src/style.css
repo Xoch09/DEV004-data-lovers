@@ -36,9 +36,9 @@
   width: 120px;
   border:none; 
   border-radius: 20px;
-  font:30px Arial, Helvetica, sans-serif; 
+  font-family: fantasy, 40px; /*xochitl*/
   font-weight:bold; 
-  color:#1f212b; 
+  color:#362FD9; /*xochitl*/
   background:#ffffff; 
   opacity: 0.5;
 }
@@ -83,15 +83,15 @@
 /*Parrafo de la carta */
 
 .card .title {
-  font-family: 'Concert One', cursive;
-  color: #0707079c;
-  font-size: 30px;
+  font-family: cursive; font-size:x-large;/*xoch*/
+  color: #0002A1; font-weight: bold; text-shadow:#070f1d;/*xoch*/
+  font-size: 30px ;/*xoch*/
   text-align: center;
-  margin-top: 14px;
+ margin-top: 14px;
 }
 
 .back title:first-child {
-  color:  #070f1d;
+  color: #0002A1;
   font-size: 15px;
 }
 
@@ -133,9 +133,3 @@ body {
   transform: rotateY(-180deg);
 }
 
-/*xochitl,filtro*/
-.contenedor{
- font-family:cursive;
- color:#9900FD;
- font-size: large;
-}
