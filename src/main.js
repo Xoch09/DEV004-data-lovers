@@ -1,5 +1,5 @@
 import datos from '../src/data/pokemon/pokemon.js';  
-import {filtroPorTipo, ordenarPokemon} from "./data.js"
+import {filtroPorTipo, ordenarPokemon, estPokemon} from "./data.js"
 
 const ListaPokemon = datos.pokemon;  
 
@@ -32,9 +32,27 @@ const mostrarPokemon = (datosdelpokemon) => {
   };
   
   mostrarPokemon(ListaPokemon);
+// estadisticas pokemon
+
+let buscarEst; 
+const containerEst = document.getElementById("estadisticas"); 
+containerEst.addEventListener("change", () => {   
+const estPokemones = document.getElementById("pokemones"); 
+estPokemones.innerHTML = " ";  
+buscarEst = containerEst.value; 
+console.log("var de buscar est -> " + buscarEst);
+
+mostrarPokemon(estPokemon(ListaPokemon, buscarEst));
+
+});     
+
+
+
+
 
    //Filtrar según tipo
 //innerHTML vacio reemplaza todo el contenido por un contenido a definir
+
  
 let buscarTipo; // creamos variable 
 const containerTipo = document.getElementById("tipo"); // creamos variable y llevamos lo que esta dentro de "tipo" en index.html
@@ -42,9 +60,21 @@ containerTipo.addEventListener("change", () => {    //   le aplicamos una accion
 const verPokemones = document.getElementById("pokemones");  // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
 verPokemones.innerHTML = " ";   ///
 buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
+console.log("var de buscar tipo -> " + buscarTipo);
+if (buscarTipo === "all") {
+  mostrarPokemon(ListaPokemon);
+}
 
 mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
-});                              
+});     
+
+
+ 
+
+
+
+
+
 
 let ordenarPok;
 const containerOrder = document.getElementById("order");
@@ -56,4 +86,5 @@ containerOrder.addEventListener("change", () => {
   ordenarPokemon(ListaPokemon, ordenarPok);
   mostrarPokemon(ListaPokemon);
 });
+
 

@@ -1,0 +1,64 @@
+const Superheroes = Object.create (
+  {
+    
+    hero1:
+    { 
+    name: 'Superman', 
+    
+    power: 'flying',
+    velmax: 10000,
+    velmin: 5000,
+    }
+
+    hero2:
+    { 
+    name: 'mujer maravilla', 
+    power: 'flying',
+    velmax: 14000,
+    velmin: 6000,
+    }
+
+    hero3:
+    { 
+    name: 'batman', 
+    power: 'flying',
+    velmax: 11000,
+    velmin: 1000,
+    }
+
+    hero4:
+    { 
+    name: 'super f', 
+    power: 'flying',
+    velmax: 13000,
+    velmin: 3000,
+    }
+  
+    hero5:
+    { 
+    name: 'hombre araña', 
+    power: 'flying',
+    velmax: 7000,
+    velmin: 9000,
+    }
+
+  });
+  
+ // del anterior objeto imprimir una lista de los tres heroes mas veloces del valor velmax en codigo js
+
+
+let heroesList = Object.values(Superheroes); 
+
+// crear array de los valores del objeto Superheroes
+
+heroesList.sort((a,b) => b.velmax - a.velmax).slice(0, 3).forEach((hero) => {
+console.log(`${hero.name} is the fastest with a max speed of ${hero.velmax}`); 
+});
+
+
+
+
+
+"pokemon": [ "stats": { "base-attack": "118", "base-defense": "111", "base-stamina": "128", "max-cp": "1115", "max-hp": "113" },
+
+necesito sacar el numero 111
