@@ -4,9 +4,9 @@ import {filtroPorTipo,ordenarPokemon} from "./data.js"
 const ListaPokemon = datos.pokemon;  
 
 const mostrarPokemon = (datosdelpokemon) => {
-    const TarjetaPoke = document.getElementById("pokemones");
-    datosdelpokemon.forEach((elem) => {     //1
-      TarjetaPoke.innerHTML += `
+  const TarjetaPoke = document.getElementById("pokemones");
+  datosdelpokemon.forEach((elem) => {     //1
+    TarjetaPoke.innerHTML += `
       
       <div class="card-container">  <!-- cuadro grande -->
             <div id="card" class="card">   <!-- cuadro tarjeta-->
@@ -28,22 +28,20 @@ const mostrarPokemon = (datosdelpokemon) => {
   `
   ;
 
-    });
-  };
+  });
+};
   
-  mostrarPokemon(ListaPokemon);
+mostrarPokemon(ListaPokemon);
 
-   //Filtrar según tipo
-//innerHTML vacio reemplaza todo el contenido por un contenido a definir
+//Filtrar según tipo //innerHTML vacio reemplaza todo el contenido por un contenido a definir
  
 let buscarTipo; // creamos variable 
 const containerTipo = document.getElementById("tipo"); // creamos variable y llevamos lo que esta dentro de "tipo" en index.html
 containerTipo.addEventListener("change", () => {    //   le aplicamos una accion a la variable anterior en el evento cambio (change)
-const verPokemones = document.getElementById("pokemones");  // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
-verPokemones.innerHTML = " ";   ///
-buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
-
-mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
+  const verPokemones = document.getElementById("pokemones");  // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
+  verPokemones.innerHTML = " ";   ///
+  buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
+  mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
 });
 let ordenarPok;
 const containerOrder = document.getElementById("order");
@@ -54,4 +52,17 @@ containerOrder.addEventListener("change", () => {
 
   ordenarPokemon(ListaPokemon, ordenarPok);
   mostrarPokemon(ListaPokemon);
+});
+
+/*xoch*/
+let eggPok;
+const eggs = document.getElementById("Estadistico");
+containerOrder.addEventListener("change", () => {
+  const verPokemones = document.getElementById("pokemones");
+  verPokemones.innerHTML = "";
+  eggPok = containerOrder.value;
+
+  ordenarPokemon(ListaPokemon, ordenarPok);
+  mostrarPokemon(ListaPokemon);
+  eggpokemon(ListaPokemon,eggPok)
 });

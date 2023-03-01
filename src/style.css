@@ -1,14 +1,11 @@
 .card-container {
   display: inline-block;
   margin-left: 15px;
-  margin-right: 10px;
-}
-
+margin-right: 10px;}
 /* Caja contenedora card*/
-
 .card {
   display: grid;
-  position: relative;
+position: relative;
   width: 220px;
   height: 320px;
   grid-template: 1fr / 1fr;
@@ -25,21 +22,23 @@
 /*Configuracion Card parte delantera*/
 
 .front {
- 
+
   grid-area: frontAndBack;
 }
 
 .numberTitle {
-  text-align:center; 
+  text-align: center;
   margin: auto;
-  padding:10px; 
+  padding: 10px;
   width: 120px;
-  border:none; 
+  border: none;
   border-radius: 20px;
-  font-family: fantasy, 40px; /*xochitl*/
-  font-weight:bold; 
-  color:#362FD9; /*xochitl*/
-  background:#ffffff; 
+  font-family: fantasy, 40px;
+  /*xochitl*/
+  font-weight: bold;
+  color: #362FD9;
+  /*xochitl*/
+  background: #ffffff;
   opacity: 0.5;
 }
 
@@ -58,7 +57,7 @@
   margin-top: 10px;
 }
 
-.infCardAbout{ 
+.infCardAbout {
   text-align: center;
   font-size: 15px;
   margin: auto;
@@ -83,11 +82,17 @@
 /*Parrafo de la carta */
 
 .card .title {
-  font-family: cursive; font-size:x-large;/*xoch*/
-  color: #0002A1; font-weight: bold; text-shadow:#070f1d;/*xoch*/
-  font-size: 30px ;/*xoch*/
+  font-family: cursive;
+  font-size: x-large;
+  /*xoch*/
+  color: #0002A1;
+  font-weight: bold;
+  text-shadow: #070f1d;
+  /*xoch*/
+  font-size: 30px;
+  /*xoch*/
   text-align: center;
- margin-top: 14px;
+  margin-top: 14px;
 }
 
 .back title:first-child {
@@ -96,7 +101,7 @@
 }
 
 body {
-  background-image: url(./imagenes/fondo-pokemon.png); 
+  background-image: url(./imagenes/fondo-pokemon.png);
   justify-content: center;
   background-repeat: repeat;
   min-width: 100vw;
@@ -105,7 +110,7 @@ body {
 }
 
 .portada {
-  display:block;
+  display: block;
   margin: 0 auto;
   margin-top: 30px;
   width: 40% auto;
@@ -132,4 +137,3 @@ body {
   grid-area: frontAndBack;
   transform: rotateY(-180deg);
 }
-

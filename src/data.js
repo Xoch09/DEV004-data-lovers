@@ -10,8 +10,16 @@ const filtroPorTipo = (data, valor) => {
     }
   };
   
+  /*xoch*/
+  const eggPokemon = (data, valor) => {
+    if (valor == "not in eggs") {
+      return eggPokemon ;
+    } else {
+      return ("2 km");
+    }
+  };
   
   
   
-  export {filtroPorTipo, ordenarPokemon};
+  export {filtroPorTipo, ordenarPokemon, eggPokemon};
 
