@@ -9,8 +9,10 @@
 
 <body>
   <section>
+
     <div id="paginaCompleta"> 
          <img class="portada" src="imagenes/logo-pokemon.png" />
+
       <nav class="centrar">
   
         <select id="tipo" class="btnControles centrar">
@@ -39,26 +41,27 @@
 
         </select>
 
-        <select id="estadisticas" class="btnControles centrar">
-          <option value="all">Estadisticas</option>
-          <option value="111">LosDeMejorAtaque</option>
-          <option value="base-defense">Los De Mejor Defensa</option>
+            <select id="huevos" class="btnControles centrar">
+          <option value="all">Huevos</option>
+          <option value="2 km">2 Km</option>
+          <option value="not in eggs">No nacen de Huevos</option>
+          <option value="5 km">5 KM</option>
+          <option value="10 km">10 KM</option>
+        
+
 
         </select>     
-     
+
           
   
-     
-  
-      </nav>
+    </nav>
   
     </div>
   </section>
   
-    
-    <div id="pokemones"></div>
-  
-  
+  <div id="rdoporcentaje"></div>
+
+    <div id="pokemones">  </div>
   
         <script src="main.js" type="module"></script>
         <script src="data.js" type="module"></script>

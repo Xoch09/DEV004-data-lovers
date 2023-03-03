@@ -1,5 +1,5 @@
 import datos from '../src/data/pokemon/pokemon.js';  
-import {filtroPorTipo, ordenarPokemon, estPokemon} from "./data.js"
+import {filtroPorTipo, ordenarPokemon, filtroPorHuevos} from "./data.js"
 
 const ListaPokemon = datos.pokemon;  
 
@@ -32,26 +32,6 @@ const mostrarPokemon = (datosdelpokemon) => {
   };
   
   mostrarPokemon(ListaPokemon);
-// estadisticas pokemon
-
-let buscarEst; 
-const containerEst = document.getElementById("estadisticas"); 
-containerEst.addEventListener("change", () => {   
-const estPokemones = document.getElementById("pokemones"); 
-estPokemones.innerHTML = " ";  
-buscarEst = containerEst.value; 
-console.log("var de buscar est -> " + buscarEst);
-
-mostrarPokemon(estPokemon(ListaPokemon, buscarEst));
-
-});     
-
-
-
-
-
-   //Filtrar según tipo
-//innerHTML vacio reemplaza todo el contenido por un contenido a definir
 
  
 let buscarTipo; // creamos variable 
@@ -61,19 +41,13 @@ const verPokemones = document.getElementById("pokemones");  // creamos variable 
 verPokemones.innerHTML = " ";   ///
 buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
 console.log("var de buscar tipo -> " + buscarTipo);
+
 if (buscarTipo === "all") {
   mostrarPokemon(ListaPokemon);
 }
 
 mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
 });     
-
-
- 
-
-
-
-
 
 
 let ordenarPok;
@@ -87,4 +61,23 @@ containerOrder.addEventListener("change", () => {
   mostrarPokemon(ListaPokemon);
 });
 
+
+let huevosTipo; // creamos variable/// null
+const containerHuevos = document.getElementById("huevos"); // creamos variable y llevamos lo que esta dentro de "huevos" en index.html  //2km
+containerHuevos.addEventListener("change", () => {    
+const verHuevosPokemones = document.getElementById("pokemones");  
+const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje"); 
+verHuevosPokemones.innerHTML = " ";  
+console.log("filtro por HUEVOS ++++ -> " + filtroPorHuevos.length);
+// verHuevosPokemonesPorcentaje.innerHTML =  `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor}km es de: 1111%</div>`;
+huevosTipo = containerHuevos.value;  ///2 km
+console.log("var de buscar huevos -> " + huevosTipo);
+
+if (huevosTipo === "all") {
+  mostrarPokemon(ListaPokemon);
+}
+
+mostrarPokemon(filtroPorHuevos(ListaPokemon, huevosTipo));
+
+});    
 

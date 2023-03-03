@@ -1,6 +1,3 @@
-
-
-
 const filtroPorTipo = (data, valor) => {
   console.log("data ----> " + data);
   console.log("valor ----> " + valor);
@@ -10,39 +7,6 @@ const filtroPorTipo = (data, valor) => {
 };
 
 
-    const estPokemon = (data, valor) =>{
-      console.log("data est ----> " + data);  //
-      console.log("valor est ----> " + valor);   ///
-
-      const filtrarPokemonPorEst = data.filter((pokemon) => pokemon.type.indexOf(valor) > -1);  ///Electric 
-      console.log("variable filtrar pokemon por est -->" + filtrarPokemonPorEst)
-      return filtrarPokemonPorEst;
-
-//    const estadisticasPokemon =  data.sort((a, b) => b.base-attack - a.base-attack).slice(0, 10).forEach(data);
-//    console.log("variable estadisticas " + estadisticasPokemon)
-
-
-}
-
-
-
-//¿Qué es el índice de búsqueda?
-//El índice de búsqueda (IndexOf) es una función de JavaScript que se usa para encontrar la ubicación de un valor en una matriz.
-// devuelve la primera posición en la que se encuentra el elemento dado, o -1 si no existe.
-
-//let arreglo = ['Hola', 'Español', 'Adios'];
-//let index = arreglo.indexOf('Español') // Devolverá 1
-
-
-
-
-
-
-
-
-//El método filter() crea un nuevo array con todos los elementos
-//que cumplan la condición implementada por la función dada.
-//5 venenos
 const ordenarPokemon = (data, valor) => {
   if (valor === "A-Z") {
     data.sort((a, b) => a.name.localeCompare(b.name));
@@ -51,7 +15,17 @@ const ordenarPokemon = (data, valor) => {
   }
 };
 
+const filtroPorHuevos = (data, valor) => {   // data es toda la data pokemon ---  valor es 2km
+  console.log("data ----> " + data);
+  console.log("valor ----> " + valor);   
+  const filtrarPokemonPorHuevos = data.filter((pokemon) => pokemon.egg === valor);  /// aqui van los 23 resultdos
+  console.log("variable filtrar huevos  pokemon " + filtrarPokemonPorHuevos)
+  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje"); 
+  verHuevosPokemonesPorcentaje.innerHTML =  `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor} es de: ${((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2)}%</div>`;
+                                                                                                              //2km                    ( //23          /    251) * 100 = 9,16%
+  return filtrarPokemonPorHuevos;
+};
 
 
+export {filtroPorTipo, ordenarPokemon, filtroPorHuevos};
 
-export {filtroPorTipo, ordenarPokemon, estPokemon};
