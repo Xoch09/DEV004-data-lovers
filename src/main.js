@@ -26,8 +26,7 @@ const mostrarPokemon = (datosdelpokemon) => {
      </div>
    
   `
-  ;
-
+   ;
   });
 };
   
@@ -41,6 +40,10 @@ containerTipo.addEventListener("change", () => {    //   le aplicamos una accion
   const verPokemones = document.getElementById("pokemones");  // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
   verPokemones.innerHTML = " ";   ///
   buscarTipo = containerTipo.value;  /// la informacion filtrada le asiganamos a la variable buscarTipo
+  if (buscarTipo === "all"){
+    mostrarPokemon(ListaPokemon);
+  }
+  
   mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
 });
 let ordenarPok;
@@ -54,15 +57,28 @@ containerOrder.addEventListener("change", () => {
   mostrarPokemon(ListaPokemon);
 });
 
-/*xoch*/
+/*xoch
 let eggPok;
 const eggs = document.getElementById("Estadistico");
 containerOrder.addEventListener("change", () => {
   const verPokemones = document.getElementById("pokemones");
   verPokemones.innerHTML = "";
-  eggPok = containerOrder.value;
+  eggPok = containerOrder.value;*/
+let huevosTipo;
+const containerHuevos = document.getElementById("huevos");
+containerHuevos.addEventListener("change",() =>{
+ const verHuevosPokemones = document.getElementById("pokemones");
+  const verHuevosPokemonesPorcentaje= document.getElementById("rdoporcentaje");
+  verHuevosPokemones.innerHTML = " ";
+console.log ("filtro por HUEVOS ++++ =>" + filtroPorHuevos.length);
+  huevosTipo=containerHuevos.value;
+  if (huevosTipo === "all") {
+    mostrarPokemon(ListaPokemon);
+  }
+  mostrarPokemon(filtrarPorHuevos(ListaPokemon,huevosTipo));
+  });
 
-  ordenarPokemon(ListaPokemon, ordenarPok);
-  mostrarPokemon(ListaPokemon);
-  eggpokemon(ListaPokemon,eggPok)
-});
+// ordenarPokemon(ListaPokemon, ordenarPok);
+  //mostrarPokemon(ListaPokemon);
+//xoch//eggpokemon(ListaPokemon,eggPok)
+//});

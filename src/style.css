@@ -95,6 +95,16 @@ position: relative;
   margin-top: 14px;
 }
 
+/*xoch*/
+.back.elem.generation.name {
+  font-family: cursive;
+  font-size: x-large;
+  color: #ff60ff;
+/*xoch*/
+
+
+}
+
 .back title:first-child {
   color: #0002A1;
   font-size: 15px;
