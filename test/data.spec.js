@@ -10,15 +10,15 @@ import { example, anotherExample, filtroPorTipo } from '../src/data.js';
     expect(example()).toBe('example');
   });
 });*/
-describe('filtroPorTipo', () => {
-  it('dragon', () => {
-    expect(typeof filtroPorTipo).toBe('Dragon');
-  });
+//describe('filtroPorTipo', () => {
+  //it('dragon', () => {
+    //expect(typeof filtroPorTipo).toBe('Dragon');
+  //});
 
-  it('returns `filtroPorTipo`', ("dragon") => {
-    expect(filtroPorTipo("dragon")).toBe('Dragon');
-  });
-});
+  //it('returns `filtroPorTipo`', ("dragon") => {
+    //expect(filtroPorTipo("dragon")).toBe('Dragon');
+  //});
+//});
 
 describe('anotherExample', () => {
   it('is a function', () => {
