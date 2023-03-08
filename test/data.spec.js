@@ -12,7 +12,7 @@ import { example, anotherExample, filtroPorTipo } from '../src/data.js';
 });*/
 //describe('filtroPorTipo', () => {
   //it('dragon', () => {
-    //expect(typeof filtroPorTipo).toBe('Dragon');
+    //expect(typeof filtroPorTipo).toBe('function');
   //});
 
   //it('returns `filtroPorTipo`', ("dragon") => {
@@ -20,12 +20,12 @@ import { example, anotherExample, filtroPorTipo } from '../src/data.js';
   //});
 //});
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe('filtroPorTipo', () => {
+  it('is a function', () => { //elmensaje
+    expect(typeof filtroPorTipo).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns `filtroPorTipo`', () => {
+    expect(filtroPorTipo()).toBe('OMG');
   });
 });
