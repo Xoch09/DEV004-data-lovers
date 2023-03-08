@@ -1,8 +1,8 @@
 const filtroPorTipo = (data, valor) => {
-  console.log("data ----> " + data);
-  console.log("valor ----> " + valor);
+  //console.log("data ----> " + data);
+  //console.log("valor ----> " + valor);
   const filtrarPokemonPorTipo = data.filter((pokemon) => pokemon.type.indexOf(valor) > -1);  ///Electric 
-  console.log("variable filtrar pokemon " + filtrarPokemonPorTipo)
+  //console.log("variable filtrar pokemon " + filtrarPokemonPorTipo)
   return filtrarPokemonPorTipo;
 };
 
@@ -16,16 +16,44 @@ const ordenarPokemon = (data, valor) => {
 };
 
 const filtroPorHuevos = (data, valor) => {   // data es toda la data pokemon ---  valor es 2km
-  console.log("data ----> " + data);
-  console.log("valor ----> " + valor);   
+  //console.log("data ----> " + data);
+  //console.log("valor ----> " + valor);
   const filtrarPokemonPorHuevos = data.filter((pokemon) => pokemon.egg === valor);  /// aqui van los 23 resultdos
   console.log("variable filtrar huevos  pokemon " + filtrarPokemonPorHuevos)
-  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje"); 
-  verHuevosPokemonesPorcentaje.innerHTML =  `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor} es de: ${((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2)}%</div>`;
-                                                                                                              //2km                    ( //23          /    251) * 100 = 9,16%
+  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje");
+  verHuevosPokemonesPorcentaje.innerHTML = `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor} es de: ${((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2)}%</div>`;
+  //2km                    ( //23          /    251) * 100 = 9,16%
   return filtrarPokemonPorHuevos;
 };
 
+const orderByNum = (data, valor) => {
+  if (valor === "0-9") {
+    //data.sort((a, b) => a.num.localeCompare(b.num));
 
-export {filtroPorTipo, ordenarPokemon, filtroPorHuevos};
+    data.sort((a, b) => {
+      if (a.num > b.num) {
+        return 1;
+      } else if (a.num < b.num) {
+        return -1;
+      } else if (a.num === b.num) {
+        return 0;
+      }
+    });
+  } else {
+    //data.sort((a, b) => b.num.localeCompare(a.num));
+
+    data.sort((a, b) => {
+      if (a.num < b.num) {
+        return 1;
+      } else if (a.num > b.num) {
+        return -1;
+      } else if (a.num === b.num) {
+        return 0;
+      }
+    });
+  }
+};
+
+
+export { filtroPorTipo, ordenarPokemon, filtroPorHuevos,  orderByNum};
 

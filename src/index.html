@@ -10,11 +10,11 @@
 <body>
   <section>
 
-    <div id="paginaCompleta"> 
-         <img class="portada" src="imagenes/logo-pokemon.png" />
+    <div id="paginaCompleta">
+      <img class="portada" src="imagenes/logo-pokemon.png" />
 
       <nav class="centrar">
-  
+
         <select id="tipo" class="btnControles centrar">
           <option value="all">por Tipo</option>
           <option value="water">Agua</option>
@@ -38,35 +38,37 @@
           <option value="all">Ordenar Alfabeticamente</option>
           <option valor="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
+          
 
         </select>
 
-            <select id="huevos" class="btnControles centrar">
+        <select id="huevos" class="btnControles centrar">
           <option value="all">Huevos</option>
           <option value="2 km">2 Km</option>
           <option value="not in eggs">No nacen de Huevos</option>
           <option value="5 km">5 KM</option>
           <option value="10 km">10 KM</option>
-        
+        </select>
+
+        <select id="orderNum" class="btnControles centrar">
+          <option value="all">Ordenar por Número</option>
+          <option value="0-9">Ascendente</option>
+          <option value="9-0">Descendente</option>
+        </select>
 
 
-        </select>     
 
-          
-  
-    </nav>
-  
+      </nav>
+
     </div>
   </section>
-  
+
   <div id="rdoporcentaje"></div>
 
-    <div id="pokemones">  </div>
-  
-        <script src="main.js" type="module"></script>
-        <script src="data.js" type="module"></script>
-  </body>
-  
-  </html>
+  <div id="pokemones"> </div>
 
-  
+  <script src="main.js" type="module"></script>
+  <script src="data.js" type="module"></script>
+</body>
+
+</html>
