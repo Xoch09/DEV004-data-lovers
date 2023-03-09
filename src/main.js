@@ -5,7 +5,7 @@ const ListaPokemon = datos.pokemon;
 
 const mostrarPokemon = (datosdelpokemon) => {
   const TarjetaPoke = document.getElementById("pokemones");
-  datosdelpokemon.forEach((elem) => {     //1
+  datosdelpokemon.forEach((elem) => {     
     TarjetaPoke.innerHTML += `
       
       <div class="card-container">  <!-- cuadro grande -->
@@ -26,7 +26,7 @@ const mostrarPokemon = (datosdelpokemon) => {
      </div>
    
   `
-   ;
+    ;
   });
 };
   
@@ -67,18 +67,18 @@ containerOrder.addEventListener("change", () => {
 let huevosTipo;
 const containerHuevos = document.getElementById("huevos");
 containerHuevos.addEventListener("change",() =>{
- const verHuevosPokemones = document.getElementById("pokemones");
-  const verHuevosPokemonesPorcentaje= document.getElementById("rdoporcentaje");
+  const verHuevosPokemones = document.getElementById("pokemones");
+  
   verHuevosPokemones.innerHTML = " ";
-console.log ("filtro por HUEVOS ++++ =>" + filtroPorHuevos.length);
+
   huevosTipo=containerHuevos.value;
   if (huevosTipo === "all") {
     mostrarPokemon(ListaPokemon);
   }
-  mostrarPokemon(filtrarPorHuevos(ListaPokemon,huevosTipo));
-  });
+  filtroPorHuevos(ListaPokemon,huevosTipo);
+});
 
 // ordenarPokemon(ListaPokemon, ordenarPok);
-  //mostrarPokemon(ListaPokemon);
+//mostrarPokemon(ListaPokemon);
 //xoch//eggpokemon(ListaPokemon,eggPok)
 //});

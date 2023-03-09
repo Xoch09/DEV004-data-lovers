@@ -10,10 +10,14 @@ const ordenarPokemon = (data, valor) => {
   }
 };
   
-const filtroPorHuevos = (data, valor) => {
-  const filtrarPokemonPorHuevos = data.filter((pokemon) => pokemon.egg === valor);
-  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje");
-  verHuevosPokemonesPorcentaje.innerHTML = `>div class="resultado-cantidad"> El porcentaje de pokemones con ${valor}es de;${((firtrarPokemonPorHuevos.length /251) *100).toFixed(2)}%</div>`;
+const filtroPorHuevos = (data, valor) => {   // data es toda la data pokemon ---  valor es 2km
+  console.log("data ----> " + data);
+  console.log("valor ----> " + valor);   
+  const filtrarPokemonPorHuevos = data.filter((pokemon) => pokemon.egg === valor);  /// aqui van los 23 resultdos
+  console.log("variable filtrar huevos  pokemon " + filtrarPokemonPorHuevos)
+  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje"); 
+  verHuevosPokemonesPorcentaje.innerHTML =  `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor} es de: ${((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2)}%</div>`;
+                                                                                                              //2km                    ( //23          /    251) * 100 = 9,16%
   return filtrarPokemonPorHuevos;
 };
   /*xoch
