@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokemon GO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Pokemon GO</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <section id="botones">
+      <div id="paginaCompleta">
+        <img class="portada" src="imagenes/logo-pokemon.png" />
+        <nav class="centrar">
+          <select id="tipo" class="btnControles centrar">
+            <option value="all">Todos</option>
+            <option value="water">Agua</option>
+            <option value="bug">Bicho</option>
+            <option value="dragon">Dragón</option>
+            <option value="electric">Eléctrico</option>
+            <option value="ghost">Fantasma</option>
+            <option value="fire">Fuego</option>
+            <option value="ice">Hielo</option>
+            <option value="fighting">Lucha</option>
+            <option value="normal">Normal</option>
+            <option value="grass">Planta</option>
+            <option value="psychic">Psíquico</option>
+            <option value="rock">Roca</option>
+            <option value="ground">Tierra</option>
+            <option value="poison">Veneno</option>
+            <option value="flying">Volador</option>
+          </select>
 
-
-<body>
-  <section>
-    <div id="paginaCompleta"> 
-         <img class="portada" src="imagenes/logo-pokemon.png" />
-      <nav class="centrar">
-  
-        <select id="tipo" class="btnControles centrar">
-          <option value="all">por Tipo</option>
-          <option value="Water">Agua</option>
-          <option value="Bug">Bicho</option>
-          <option value="Dragon">Dragón</option>
-          <option value="Electric">Eléctrico</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Fire">Fuego</option>
-          <option value="Ice">Hielo</option>
-          <option value="Fighting">Lucha</option>
-          <option value="Normal">Normal</option>
-          <option value="Grass">Planta</option>
-          <option value="Psychic">Psíquico</option>
-          <option value="Rock">Roca</option>
-          <option value="Ground">Tierra</option>
-          <option value="Poison">Veneno</option>
-          <option value="Flying">Volador</option>
-        </select>
-  
-        <select id="order" class="btnControles centrar">
-          <option value="all">Ordenar Pokemon</option>
-          <option valor="A-Z">A-Z</option>
-          <option value="Z-A">Z-A</option>
-
-        </select>
-          
-        <select id="huevos" class="btnControles centrar">
-          <option value="all">huevos</option>
-          <option value="2 km">2 km</option>
-          <option value="not in eggs">No nacen de huevos</option>
-          <option value="5 km">5 km</option>
-          <option value="10 km">10 km</option>
-
-        </select>
-  <!--xoch
-  <select id="Estadistico" class="btnControles centrar">
-    <option value="Egss">Estadistico huevo</option>
-   
-  </select>-->
-  
-      </nav>
-  
-    </div>
-  </section>
-  
-    <div id="rdoporcentaje"></div>
-    <div id="pokemones"></div>
-  <!--aqui se imprime el INNERHTML -->
-  
-  
-        <script src="main.js" type="module"></script>
-       
+          <select id="order" class="btnControles centrar">
+            <option value="all">Ordenar Pokemones</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
+          </select>
+          <select id="huevos" class="btnControles centrar">
+            <option value="all">Huevos</option>
+            <option value="2 km">2 Km</option>
+            <option value="not in eggs">No nacen de Huevos</option>
+            <option value="5 km">5 KM</option>
+            <option value="10 km">10 KM</option>
+          </select>
+        </nav>
+      </div>
+    </section>
+    <section id="resultados">
+      <!--dar estilo con éste ID-->
+      <div id="rdoporcentaje"> 
+        <!--aqui se imprimeel porcentaje-->
+        <div id="resultado-cantidad"></div>
+      </div>
+      <!--AQUI IMPRIME, LO DE MAIN.JS const verPokemones-->
+      <div id="pokemones"></div>
+    </section>
+    
+    <!--JS-->
+    <script src="main.js" type="module"></script>
   </body>
-  
-  </html>
+</html>

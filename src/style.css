@@ -147,4 +147,11 @@ body {
   grid-area: frontAndBack;
   transform: rotateY(-180deg);
 }
-#todotexto{} /*agregar id a class
+#resultado-cantidad{
+  font-family: cursive;
+  font-size: x-large;
+  color: 	#00FFFF; 
+    background:#04b3ee 
+    
+  
+  }

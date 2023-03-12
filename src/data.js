@@ -1,35 +1,52 @@
-const filtroPorTipo = (data, valor) => {
-  const filtrarPokemonPorTipo = data.filter((pokemon) => pokemon.type.indexOf(valor.toLowerCase()) > -1);
-  return filtrarPokemonPorTipo;
+const filtroPorTipo = (pokemones, tipo) => {
+  const pokemonesArray = Object.values(pokemones);
+  const pokemonesFiltrados = pokemonesArray.filter(
+    (pokemon) => pokemon.type && pokemon.type.includes(tipo)
+  );
+  return pokemonesFiltrados;
 };
+//variable global
+let porcentaje;
+const filtroPorHuevos = (data, valor) => {
+  //filter devuelve un array nuevo, en el return
+  const filtrarPokemonPorHuevos = data.filter( 
+    (pokemon) => pokemon.egg === valor
+  );
+//valor, lo que selecciona all, 2km etc.
+  if (valor === "all") {
+    return filtrarPokemonPorHuevos;
+
+  } else if (valor === "2 km") {
+    porcentaje = ((filtrarPokemonPorHuevos.length / 251) * 100) //regla de 3
+      //LO DA EN 2 DECIMALES
+      .toFixed(2);
+  } else if (valor === "5 km") {
+    porcentaje = ((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2);
+  } else if (valor === "10 km") {
+    porcentaje = ((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2);
+  } else if (valor === "not in eggs") {
+    porcentaje = ((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2);
+  }
+
+  //retorna el nuevo array
+
+  return porcentaje;
+};
+//valor, las opciones que aparecen en el contenedor / data todos los pokemones
 const ordenarPokemon = (data, valor) => {
   if (valor === "A-Z") {
+    //ordenar, comparando entre a y b, con el localcompare se ordena respetando caracteres especiales, dieresis, acentos etc.
     data.sort((a, b) => a.name.localeCompare(b.name));
-  } else {
+  } else if (valor === "Z-A") {
     data.sort((a, b) => b.name.localeCompare(a.name));
+  } else if (valor === "ascendente") {
+    //ordenar, comparando entre a y b por número de pokemon
+    data.sort((a, b) => a.num - b.num);
+  } else if (valor === "descendente") {
+    data.sort((a, b) => b.num - a.num);
   }
+  //regresa la data ya ordenada, pejem. de seleccionar de la A a la Z, devuelve return data ordenada
+  return data;
 };
-  
-const filtroPorHuevos = (data, valor) => {   // data es toda la data pokemon ---  valor es 2km
-  console.log("data ----> " + data);
-  console.log("valor ----> " + valor);   
-  const filtrarPokemonPorHuevos = data.filter((pokemon) => pokemon.egg === valor);  /// aqui van los 23 resultdos
-  console.log("variable filtrar huevos  pokemon " + filtrarPokemonPorHuevos)
-  const verHuevosPokemonesPorcentaje = document.getElementById("rdoporcentaje"); 
-  verHuevosPokemonesPorcentaje.innerHTML =  `<div class="resultado-cantidad">El porcentaje de Pokemones con ${valor} es de: ${((filtrarPokemonPorHuevos.length / 251) * 100).toFixed(2)}%</div>`;
-                                                                                                              //2km                    ( //23          /    251) * 100 = 9,16%
-  return filtrarPokemonPorHuevos;
-};
-  /*xoch
-  const eggPokemon = (data, valor) => {
-    if (valor == "not in eggs") {
-      return eggPokemon ;
-    } else {
-      return ("2 km");
-    }
-  };*/
-  
-  
-  
-export {filtroPorTipo, ordenarPokemon, filtroPorHuevos};
 
+export { filtroPorTipo, ordenarPokemon, filtroPorHuevos };
