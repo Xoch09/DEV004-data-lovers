@@ -84,6 +84,7 @@ containerHuevos.addEventListener("change", () => {
     " km  es de: " +
     filtroPorHuevos(ListaPokemon, huevosTipo) +
     " % ";
+   
   ///2 km
   //console.log("var de buscar huevos -> " + huevosTipo);
 });

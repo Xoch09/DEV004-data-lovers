@@ -9,13 +9,12 @@ const filtroPorTipo = (pokemones, tipo) => {
 let porcentaje;
 const filtroPorHuevos = (data, valor) => {
   //filter devuelve un array nuevo, en el return
-  const filtrarPokemonPorHuevos = data.filter( 
+  const filtrarPokemonPorHuevos = data.filter(
     (pokemon) => pokemon.egg === valor
   );
-//valor, lo que selecciona all, 2km etc.
+  //valor, lo que selecciona all, 2km etc.
   if (valor === "all") {
     return filtrarPokemonPorHuevos;
-
   } else if (valor === "2 km") {
     porcentaje = ((filtrarPokemonPorHuevos.length / 251) * 100) //regla de 3
       //LO DA EN 2 DECIMALES
