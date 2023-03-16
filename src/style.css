@@ -1,12 +1,64 @@
-.card-container {
-  display: inline-block;
-  margin-left: 15px;
-  margin-right: 10px;
+.logo {
+  display: block; 
+  margin: 0 auto; 
+  justify-content: center;  
+} 
+
+
+option { /*palabra reservada*/
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  color: #02024e;
+  background-color: #d8f0a0;
 }
 
-/* Caja contenedora card*/
 
-.card {
+/* Estilos para el contenedor del selector */
+.selectores {
+  display: inline-block;
+  background-color: #2768e2;
+  color: #e9dcdc;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 5px solid #51b6e6;
+  height: 40px;
+  width: 200px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0.9rem;
+ }
+
+nav {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.estadisticas{
+  font-family: cursive;
+  font-size: x-large;
+  font-size: 50px;
+  color: 	#000000; 
+  margin: 15px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  } 
+
+ .card-container {
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 10px;}
+
+.card-container:hover .card { /* giro de la tarjeta*/
+  transform: rotateY(180deg);
+}  
+
+.card { /* contiene todas las tajetas*/
   display: grid;
   position: relative;
   width: 220px;
@@ -17,36 +69,15 @@
   transition: all 1s ease;
 }
 
-.card div {
+.card div {    /*visibiliza la parte delantera del card*/
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
 
-/*Configuracion Card parte delantera*/
-
 .front {
- 
+  background-image: url(imagenes/fondotarjeta.jpg);
   grid-area: frontAndBack;
-}
-
-.numberTitle {
-  text-align:center; 
-  margin: auto;
-  padding:10px; 
-  width: 120px;
-  border:none; 
-  border-radius: 20px;
-  font:30px Arial, Helvetica, sans-serif; 
-  font-weight:bold; 
-  color:#1f212b; 
-  background:#ffffff; 
-  opacity: 0.5;
-}
-
-.picture {
-  width: 70%;
-  margin: 0 auto;
-}
+} 
 
 .front,
 .back {
@@ -56,79 +87,64 @@
   height: 300px;
   border-radius: 20px;
   margin-top: 10px;
-}
+} 
 
-.infCardAbout{ 
+.card .titulo {
+  font-family: cursive;
+  font-size: x-large;
+  color: #083983;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 14px;
+} 
+
+.numeroTitulo {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  width: 120px;
+  border: none;
+  border-radius: 20px;
+  font-family: fantasy, 40px;
+  font-weight: bold;
+  color: #362FD9;
+  background: #ffffff;
+  opacity: 0.5;
+} 
+
+.imagen {
+  width: 70%;
+  margin: 0 auto;
+} 
+
+.back {
+  background-image: url(imagenes/fondotarjeta.jpg);
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+} 
+
+.infoTarjeta {
   text-align: center;
   font-size: 15px;
   margin: auto;
   margin-left: 10px;
   margin-right: 10px;
-}
+} 
 
 
-/* Parte trasera card*/
-
-.back {
-  background-image: url(images/fondoCarta.jpg);
-  grid-area: frontAndBack;
-  transform: rotateY(-180deg);
-}
-
-.card-container:hover .card {
-  transform: rotateY(180deg);
-}
-
-/*Parrafo de la carta */
-
-.card .title {
-  font-family: 'Concert One', cursive;
-  color: #0707079c;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 14px;
-}
-
-.back title:first-child {
-  color:  #070f1d;
-  font-size: 15px;
-}
-
-body {
-  background-image: url(./imagenes/fondo-pokemon.png); 
+body {                /*palabra reservada*/
+  background-image: url(./imagenes/fondo-pokemon.png);
   justify-content: center;
   background-repeat: repeat;
   min-width: 100vw;
   max-height: 100vh;
   font-family: 'Assistant', sans-serif;
-}
+} 
 
-.portada {
-  display:block;
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 40% auto;
-  justify-content: center;
-}
 
-.front {
-  background-image: url(imagenes/fondotarjeta.jpg);
-  grid-area: frontAndBack;
-}
 
-.front,
-.back {
-  position: relative;
-  display: grid;
-  width: 230px;
-  height: 300px;
-  border-radius: 20px;
-  margin-top: 10px;
-}
 
-.back {
-  background-image: url(imagenes/fondotarjeta.jpg);
-  grid-area: frontAndBack;
-  transform: rotateY(-180deg);
-}
-
+  
+  
+  

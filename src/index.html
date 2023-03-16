@@ -1,99 +1,70 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon GO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Pokemon GO</title>
-  <link rel="stylesheet" href="style.css" />
-  
-</head>
+  <body>
+    <section id="botones" >
+      <div id="paginaCompleta">
+        <img class="logo" src="imagenes/logo-pokemon.png" />
+        <nav>
+          <select id="tipo" class="selectores">
+            <option value="all">Todos</option>
+            <option value="water">Agua</option>
+            <option value="bug">Bicho</option>
+            <option value="dragon">Dragón</option>
+            <option value="electric">Eléctrico</option>
+            <option value="ghost">Fantasma</option>
+            <option value="fire">Fuego</option>
+            <option value="ice">Hielo</option>
+            <option value="fighting">Lucha</option>
+            <option value="normal">Normal</option>
+            <option value="grass">Planta</option>
+            <option value="psychic">Psíquico</option>
+            <option value="rock">Roca</option>
+            <option value="ground">Tierra</option>
+            <option value="poison">Veneno</option>
+            <option value="flying">Volador</option>
+          </select>
 
-<body>
-
-  <section>
-
-    <div id="paginaCompleta" class="container"> 
-
-         <img class="portada" src="imagenes/logo-pokemon.png" />
+          <select id="order" class="selectores">
+            <option value="all">Ordenar Pokemones</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
+          </select>
+          <select id="huevos" class="selectores">
+            <option value="all">Huevos</option>
+            <option value="2 km">2 Km</option>
+            <option value="not in eggs">No nacen de Huevos</option>
+            <option value="5 km">5 KM</option>
+            <option value="10 km">10 KM</option>
+          </select>
+        </nav>
+      </div>
+    </section>
+    
+    <section id="resultados">
       
-  <nav>
-  <!-- ************************************************************** -->
-        <select id="tipo" class="tipo">
-          <option value="all">por Tipo</option>
-          <option value="water">Agua</option>
-          <option value="bug">Bicho</option>
-          <option value="dragon">Dragón</option>
-          <option value="electric">Eléctrico</option>
-          <option value="ghost">Fantasma</option>
-          <option value="fire">Fuego</option>
-          <option value="ice">Hielo</option>
-          <option value="fighting">Lucha</option>
-          <option value="normal">Normal</option>
-          <option value="grass">Planta</option>
-          <option value="psychic">Psíquico</option>
-          <option value="rock">Roca</option>
-          <option value="ground">Tierra</option>
-          <option value="poison">Veneno</option>
-          <option value="flying">Volador</option>
-        </select>
-<!-- ************************************************************** -->
-        <select id="order" class="tipo" >
-          <option value="all">Ordenar Pokemones</option>
-          <option valor="A-Z">A-Z</option>
-          <option value="Z-A">Z-A</option>
-          <option value="ascendente">Ascendente</option>
-          <option value="descendente">Descendente</option>
-
-        </select>
-
-   <!-- ************************************************************** -->
-
-        <select id="huevos" class="tipo" >
-          <option value="all">Huevos</option>
-          <option value="2 km">2 Km</option>
-          <option value="not in eggs">No nacen de Huevos</option>
-          <option value="5 km">5 KM</option>
-          <option value="10 km">10 KM</option>
-      </select>     
-
-      <!-- ************************************************************** -->
-
-      <select id="estadisticas" class="tipo">
-        <option value="">Curiosidades</option>
-        <option value="total">Número total de Pokémons en la lista</option>
-        <option value="eggs">Porcentaje de Pokémons por huevo</option>
-      </select>
-      
-
-      <div id="info-estad">
-
+      <div id="rdoporcentaje"> 
+       
+        <div id="resultado-cantidad" class="estadisticas"></div>
+        
       </div>
 
-
       
-      <!-- ************************************************************** -->
-
-     
-    </nav>
-  
-    </div>
-
-
-    <div id="pokemones">
-
-      
-    </div>
+      <div id="pokemones"></div>
+    </section>
     
-  </section>
-
-    
-  
-    
+   
     <script src="main.js" type="module"></script>
-    <script src="data.js" type="module"></script>
-
-    </body>
-  </html>
+  </body>
+</html>
 
   
 

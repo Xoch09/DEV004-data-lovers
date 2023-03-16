@@ -1,125 +1,92 @@
-import datos from '../src/data/pokemon/pokemon.js';  
-import {filtroPorTipo, ordenarPokemon, filtroPorHuevos } from "./data.js"
+import datos from '../src/data/pokemon/pokemon.js';
+import { filtroPorTipo, ordenarPokemon, filtroPorHuevos } from "./data.js";
 
-const ListaPokemon = datos.pokemon; // toda la data de pokemon.js
-//const pokemonArray = Object.values(ListaPokemon); // convertimos la data en un array
-
-
-// ********************************************************************
-// 1. Mostrar todos los pokemones en la pantalla
-
-const mostrarPokemon = (datosdelpokemon) => { // 2. creamos funcion para mostrar los pokemones
-  const TarjetaPoke = document.getElementById("pokemones"); // 3. creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
-  datosdelpokemon.forEach((elem) => {   // 4. recorremos el array de pokemon
-    TarjetaPoke.innerHTML += `  <!-- 5. creamos el html que se va a mostrar en la pantalla-->
+//objeto con data de Pokemones, data guardada en ListaPokemon
+const ListaPokemon = datos.pokemon;
+//objeto con función de flecha para imprimir los Pokemones en el DOM
+const mostrarPokemon = (datosdelpokemon) => {
+  const TarjetaPoke = document.getElementById("pokemones");
+  //Por cada elemento de datos pokemos se va a imprimir todo lode abajo inner
+  datosdelpokemon.forEach((elem) => {
+    //template literal, para imprimir varios string
+    TarjetaPoke.innerHTML += ` 
       
-      <div class="card-container">  <!-- cuadro grande -->
-            <div id="card" class="card">   <!-- cuadro tarjeta-->
+    <div class="card-container">
+    <div id="card" class="card">
+      <div id="front" class="front">
+        <div class="titulo">${elem.name.toUpperCase()}</div>
+        <div class="numeroTitulo">#${elem.num}</div>
+        <img class="imagen" src=" ${elem.img}" />
+      </div>
 
-                <div id="front" class="front">   <!-- lado a tarjeta frente-->
-                    <div class="title"> ${elem.name.toUpperCase()}</div>  <!--  paselo a mayusculas--> 
-                    <div class="numberTitle">#${elem.num}</div>
-                    <img class="picture" src=" ${elem.img}"></img>
-                </div>
-
-                <div id="back" class=" back">  <!-- lado b tarjeta atras-->
-                        <div class="infCardAbout">${elem.about}</div> 
-                        <div class="infCardAbout"<br>Generación:<br>${elem.generation.name}</div> 
-                        <div class="infCardAbout">Tipo de Huevo<br>${elem.egg}</div>
-                        <div class="infCardAbout infCard">Fortalezas<br>${elem.resistant.join(", ")}</div>  
-                </div>
-             </div>
-     </div>
+      <div id="back" class="back">
+        <div class="infoTarjeta">${elem.about}</div>
+        <div class="infoTarjeta">
+          Generación:<br />${elem.generation.name}
+        </div>
+        <div class="infoTarjeta">Tipo de Huevo<br />${elem.egg}</div>
+        <div class="infoTarjeta"
+          Fortalezas<br />${elem.resistant.join(", ")}
+        </div>
+      </div>
+    </div>
+  </div>
    
-  `
-    ;
-
+  `;
+    //.join, por cada resistencia va a imprimir una coma y un espacio
+    //touprcase mayusculas
   });
 };
-  
+//vuelve a llamar la función con el objetode data como parametro
 mostrarPokemon(ListaPokemon);
 
-// ********************************************************************
-
-
- 
-let buscarTipo; // creamos variable/// null
-const containerTipo = document.getElementById("tipo"); // creamos variable y llevamos lo que esta dentro de "tipo" en index.html  //2km
-containerTipo.addEventListener("change", () => {  // creamos evento para que se ejecute cuando se cambie el valor de "tipo"
+// variables globales
+let buscarTipo;
+const containerTipo = document.getElementById("tipo"); // creamos variable y llevamos lo que esta dentro de "tipo" en index.html
+// en el contenedor, caja,lo llama y selecciona
+containerTipo.addEventListener("change", () => {
+  //   le aplicamos una accion a la variable anterior en el evento cambio (change)
   const verPokemones = document.getElementById("pokemones"); // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
-  verPokemones.innerHTML = " ";  // limpiamos el html
-  buscarTipo = containerTipo.value; // traemos el value: water
+  verPokemones.innerHTML = " "; ///Reinicia el conteo de los poquemones, que no se junte la data con los 250 de antes y los nuevos 250
+  buscarTipo = containerTipo.value; /// la informacion filtrada le asiganamos a la variable buscarTipo
 
-  if (buscarTipo === "all") { // si el value es "all" entonces mostramos todos los pokemones
-    mostrarPokemon(ListaPokemon); // llamamos a la funcion mostrarPokemon y le pasamos la data de pokemon.js
-  }
-
-  mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo)); // llamamos a la funcion mostrarPokemon y le pasamos la data de pokemon.js y el value: water
-});     
-
-
-
-let ordenarPok; // creamos variable /// null
-const containerOrder = document.getElementById("order"); // creamos variable y llevamos lo que esta dentro de "order" en index.html
-containerOrder.addEventListener("change", () => {
-  const verPokemones = document.getElementById("pokemones");
-  verPokemones.innerHTML = "";
-  ordenarPok = containerOrder.value;  // traemos el value: A-Z
-
-  mostrarPokemon(ordenarPokemon(ListaPokemon, ordenarPok)); // llamamos a la funcion mostrarPokemon y le pasamos la data de pokemon.js y el value: A-Z
-});
-
-
-
-let huevosTipo; // creamos variable/// null
-const containerHuevos = document.getElementById("huevos"); // creamos variable y llevamos lo que esta dentro de "huevos" en index.html  //2km
-containerHuevos.addEventListener("change", () => { // creamos evento para que se ejecute cuando se cambie el valor de "huevos"
-  const verHuevosPokemones = document.getElementById("pokemones"); // creamos variable y llevamos lo que esta dentro de "pokemones" en index.html
-  verHuevosPokemones.innerHTML = " "; // limpiamos el html
-  huevosTipo = containerHuevos.value;  // traemos el value: 2km
- 
-
-  if (huevosTipo === "all") {
+  if (buscarTipo === "all") {
     mostrarPokemon(ListaPokemon);
   }
 
-  mostrarPokemon(filtroPorHuevos(ListaPokemon, huevosTipo));
+  mostrarPokemon(filtroPorTipo(ListaPokemon, buscarTipo));
+});
+
+let ordenarPok;
+const containerOrder = document.getElementById("order");
+containerOrder.addEventListener("change", () => {
+  const verPokemones = document.getElementById("pokemones");
+  verPokemones.innerHTML = "";
+  //LA VARIABLE GLOBAL SE inicializa con el order de html
+  ordenarPok = containerOrder.value;
+
+
+  mostrarPokemon(ordenarPokemon(ListaPokemon, ordenarPok));
 
 });
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-const estad_selec = document.getElementById("estadisticas"); // 1. creamos variable y llevamos lo que esta dentro de "estadisticas" en index.html
-const estad_Info = document.getElementById("info-estad"); // 2. creamos variable y llevamos lo que esta dentro de "info-estad" en index.html
-
-estad_selec.addEventListener("change", (evento) => {
-  const estad_tipo = evento.target.value; // 3. creamos variable y traemos el value: total
-
-  if (estad_tipo === "total") { // 4. si el value es "total" entonces mostramos el total de pokemones
-    estad_Info.textContent = `Hay un total de ${ListaPokemon.length} Pokémons en la lista.`; // 4. mostramos el total de pokemones
-  }
-
-  else if (estad_tipo === 'eggs') { // si el value es "eggs" entonces mostramos el porcentaje de pokemones por tipo de huevo
-    const tipoHuevos = ['2 km', '5 km', '10 km', 'not in eggs']; // creamos array con los tipos de huevos
-    let huevosInner = '';  // creamos variable vacia
-    for (let i = 0; i < tipoHuevos.length; i++) {  // recorremos el array de tipoHuevos
-      const filtradodePokemons = filtroPorHuevos(ListaPokemon, tipoHuevos[i]); // creamos variable y llamamos a la funcion filtroPorHuevos y le pasamos la data de pokemon.js y el value: 2km
-      const porcentaje = ((filtradodePokemons.length / ListaPokemon.length) * 100).toFixed(2); 
-      //                         23                  / 251           * 100 =    9.16
-      huevosInner += `${tipoHuevos[i]}: ${porcentaje}%<br>`;
-      //                  2km          :    9.16      %
-    }
-    estad_Info.innerHTML = huevosInner;  // mostramos el porcentaje de pokemones por tipo de huevo
-  }
-  else if (estad_tipo === '') { // si el value es "" entonces mostramos nada
-    estad_Info.textContent = ''; // mostramos nada
-  } 
-
-
+let huevosTipo;
+const containerHuevos = document.getElementById("huevos"); // creamos variable y llevamos lo que esta dentro de "huevos" en index.html  //2km
+containerHuevos.addEventListener("change", () => {
+  huevosTipo = containerHuevos.value;
+  const verHuevosPokemones = document.getElementById("pokemones");
+  const verHuevosPokemonesPorcentaje =
+    document.getElementById("resultado-cantidad");
+  verHuevosPokemones.innerHTML = " ";
+ 
+  //console.log("filtro por HUEVOS ++++ -> " + filtroPorHuevos.length);
+  verHuevosPokemonesPorcentaje.innerHTML =
+    "El porcentaje de Pokemones con " +
+    huevosTipo +
+    " es de: " +
+    filtroPorHuevos(ListaPokemon, huevosTipo) +
+    " % ";
+   
+  ///2 km
+  //console.log("var de buscar huevos -> " + huevosTipo);
 });
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
